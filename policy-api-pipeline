@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('Stage') {
+            steps {
+                withCredentials([certificate( credentialsId: 'tenant2-cert', keystoreVariable: 'CERT')]) {
+                sh '''
+                rm -f policy_api_with_jenkins.json
+                rm -f file.key.pem
+                rm -f file.crt.pem
+                wget -q https://raw.githubusercontent.com/lcamarda/blog/master/policy_api_with_jenkins.json
+                openssl pkcs12 -in $CERT -out file.key.pem -nocerts -nodes -passin pass:VMware1!
+                openssl pkcs12 -in $CERT -out file.crt.pem -clcerts -nokeys -passin pass:VMware1!
+                '''
+                }
+            }
+        }
+        stage('Apply') {
+            steps {
+                sh '''
+                curl -E ./file.crt.pem --key ./file.key.pem -k -H 'content-type: application/json' --request PATCH -d "@policy_api_with_jenkins.json" https://192.168.110.15/policy/api/v1/infra
+                '''
+            }
+        }
+    }
+}
