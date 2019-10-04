@@ -93,9 +93,9 @@
       },
       { 
          "resource_type":"ChildDomain",
-         "marked_for_delete":true,
+         "marked_for_delete":false,
          "Domain":{ 
-            "id":"jenkins",
+            "id":"default",
             "resource_type":"Domain",
             "marked_for_delete":false,
             "children":[ 
