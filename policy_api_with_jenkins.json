@@ -70,7 +70,7 @@
       },
       { 
          "resource_type":"ChildService",
-         "marked_for_delete":"false",
+         "marked_for_delete":false,
          "Service":{ 
             "service_entries":[ 
                { 
@@ -95,7 +95,7 @@
          "resource_type":"ChildDomain",
          "marked_for_delete":false,
          "Domain":{ 
-            "id":"default",
+            "id":"jenkins",
             "resource_type":"Domain",
             "marked_for_delete":false,
             "children":[ 
