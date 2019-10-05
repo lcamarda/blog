@@ -3,7 +3,7 @@
    "children":[ 
       { 
          "resource_type":"ChildTier1",
-         "marked_for_delete":false,
+         "marked_for_delete":true,
          "Tier1":{ 
             "resource_type":"Tier1",
             "id":"T1-TENANT2",
