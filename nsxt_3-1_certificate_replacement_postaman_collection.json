@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "c0b5627f-b1e6-4503-a71b-d9c4655e1557",
+		"name": "Certificates 3.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Apply API Certificate for one node",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://172.16.231.21/api/v1/trust-management/certificates/f096cc4b-2120-4762-b25d-fbcd2439ae80?action=apply_certificate&service_type=API&node_id=2f040f42-64a4-68a8-2648-0f8266a8d2e7",
+					"protocol": "https",
+					"host": [
+						"172",
+						"16",
+						"231",
+						"21"
+					],
+					"path": [
+						"api",
+						"v1",
+						"trust-management",
+						"certificates",
+						"f096cc4b-2120-4762-b25d-fbcd2439ae80"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "apply_certificate"
+						},
+						{
+							"key": "service_type",
+							"value": "API"
+						},
+						{
+							"key": "node_id",
+							"value": "2f040f42-64a4-68a8-2648-0f8266a8d2e7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply API Certificate for VIP",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://172.16.231.2/api/v1/cluster/api-certificate?action=set_cluster_certificate&certificate_id=27e8a675-b6a1-4094-b41b-43bb999a3a12",
+					"protocol": "https",
+					"host": [
+						"172",
+						"16",
+						"231",
+						"2"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cluster",
+						"api-certificate"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "set_cluster_certificate"
+						},
+						{
+							"key": "certificate_id",
+							"value": "27e8a675-b6a1-4094-b41b-43bb999a3a12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply LM Certificate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cert_id\": \"c5f13ec0-8075-441e-80b5-aeb505f6b89e\",\r\n    \"service_type\": \"LOCAL_MANAGER\"\r\n}"
+				},
+				"url": {
+					"raw": "https://172.16.231.3/api/v1/trust-management/certificates?action=set_pi_certificate_for_federation",
+					"protocol": "https",
+					"host": [
+						"172",
+						"16",
+						"231",
+						"3"
+					],
+					"path": [
+						"api",
+						"v1",
+						"trust-management",
+						"certificates"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "set_pi_certificate_for_federation"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply APH-AR Certificate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cert_id\": \"176d7f41-192c-4292-88fb-5b9c9cc951d8\",\r\n    \"used_by_id\": \"1dce0f42-c66b-5f93-3cf7-f4966eb9bee3\"\r\n}"
+				},
+				"url": {
+					"raw": "https://172.16.231.3/api/v1/trust-management/certificates?action=set_appliance_proxy_certificate_for_inter_site_communication",
+					"protocol": "https",
+					"host": [
+						"172",
+						"16",
+						"231",
+						"3"
+					],
+					"path": [
+						"api",
+						"v1",
+						"trust-management",
+						"certificates"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "set_appliance_proxy_certificate_for_inter_site_communication"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
